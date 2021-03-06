@@ -11,7 +11,7 @@ from helpers.errors import DurationLimitError
 
 
 @Client.on_message(
-    filters.command("play")
+    filters.command(["play", "play@Quplayerbot"])
     & filters.group
     & ~ filters.edited
 )
@@ -50,7 +50,7 @@ async def play(client: Client, message_: Message):
                         break
 
         if offset == None:
-            await res.edit_text("❕ You did not give me anything to play.")
+            await res.edit_text("داش رو یه لینک یوتیوب یا فایل موسیقی reply بزن")
             return
 
         url = text[offset:offset+length]
