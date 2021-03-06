@@ -8,7 +8,7 @@ from helpers.wrappers import errors, admins_only
 
 
 @Client.on_message(
-    filters.command("pause")
+    filters.command(["pause", "pause@Quplayerbot"])
     & filters.group
     & ~ filters.edited
 )
@@ -20,7 +20,7 @@ async def pause(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command("resume")
+    filters.command(["resume", "resume@Quplayerbot"])
     & filters.group
     & ~ filters.edited
 )
@@ -32,7 +32,7 @@ async def resume(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["stop", "end"])
+    filters.command(["stop", "stop@Quplayerbot"])
     & filters.group
     & ~ filters.edited
 )
@@ -49,7 +49,7 @@ async def stop(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["skip", "next"])
+    filters.command(["next@Quplayerbot", "next"])
     & filters.group
     & ~ filters.edited
 )
@@ -71,7 +71,7 @@ async def skip(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command("admincache")
+    filters.command(["admincache", "admincashe@Quplayerbot"])
 )
 @errors
 @admins_only
